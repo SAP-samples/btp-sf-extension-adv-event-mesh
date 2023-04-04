@@ -1,0 +1,14 @@
+{
+    "type":"amqp",
+    "username":"<To be Filled>",
+    "password": "<To be Filled>",
+    "url": "<To be Filled>",
+    "port": 5671,
+    "uri": "<To be Filled>",
+    "management":{
+        "uri":"<To be Filled>",
+        "msgVpnName": "<To be Filled>",
+        "username": "<To be Filled>",
+        "password": "<To be Filled>"
+    }
+}

@@ -1,0 +1,124 @@
+_schema-version: "3.2"
+ID: FacilityAdmin
+description: Facility Admin app
+version: 0.0.1
+modules:
+ # --------------------- UI MODULE ----------------------------
+  - name: FacilityAdmin-router
+ # ------------------------------------------------------------
+    type: approuter.nodejs
+    path: app/FacilityAdmin/router
+    requires:
+      - name: fa-html5-repo-runtime
+      - name: fa-aem-uaa
+      - name: fa-destination-service
+        group: destinations
+        properties:
+          forwardAuthToken: false
+          name: ui5
+          url: https://ui5.sap.com
+      - name: srv-api
+        group: destinations
+        properties:
+          forwardAuthToken: true
+          name: srv-api
+          url: '~{srv-url}'
+    parameters:
+      disk-quota: 256M
+      memory: 256M
+
+ # --------------------- DB MODULE ----------------------------
+  - name: fa-aem-db-deployer
+ # ------------------------------------------------------------
+    type: hdb
+    path: db
+    parameters:
+      memory: 256M
+      buildpack: nodejs_buildpack
+    requires:
+      - name: fa-aem-db
+ # --------------------- SERVER MODULE ------------------------
+  - name: fa-aem-srv
+ # ------------------------------------------------------------
+    type: nodejs
+    path: gen
+    parameters:
+      memory: 256M
+      buildpack: nodejs_buildpack
+    requires:
+      - name: fa-aem-db
+      - name: fa-aem-uaa
+      - name: aem-ups
+    provides:
+      - name: srv-api
+        properties:
+          srv-url: ${default-url}
+
+resources:
+# --------------------- HANA SERVICE -------------------------
+  - name: fa-aem-db
+# ------------------------------------------------------------
+    type: com.sap.xs.hdi-container
+    parameters:
+      service: hana
+      service-plan: hdi-shared
+# --------------------- XSUAA SERVICE ------------------------
+  - name: fa-aem-uaa
+# ------------------------------------------------------------
+    type: org.cloudfoundry.managed-service
+    parameters:
+      config:
+        tenant-mode: dedicated
+        xsappname: fa-${space-guid}
+        oauth2-configuration:
+          redirect-uris:
+            - "https://*.cfapps.eu10-004.hana.ondemand.com/**"
+            - "https://*.cfapps.eu10.hana.ondemand.com/**"
+      service: xsuaa
+      service-plan: application
+
+# ------ USER PROVIDED SERVICE FOR ADVANCED EVENT MESH -------
+  - name: aem-ups
+# ------------------------------------------------------------
+    type: org.cloudfoundry.user-provided-service
+    parameters:
+      path: ./aem.json
+
+# --------------------- HTML5 REPO ---------------------------
+  - name: fa-html5-repo-runtime
+# ------------------------------------------------------------  
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: html5-apps-repo
+      service-plan: app-runtime
+
+# --------------------- DESTINATION ---------------------------
+  - name: fa-destination-service
+# ------------------------------------------------------------  
+    type: org.cloudfoundry.managed-service
+    parameters:
+      config:
+        HTML5Runtime_enabled: false
+        init_data:
+          instance:
+            destinations:
+              - Authentication: NoAuthentication
+                Name: ui5
+                ProxyType: Internet
+                Type: HTTP
+                URL: https://ui5.sap.com
+            existing_destinations_policy: update
+        version: 1.0.0
+      service: destination
+      service-name: fa-destination-service
+      service-plan: lite
+
+parameters:
+  deploy_mode: html5-repo
+  enable-parallel-deployments: true
+build-parameters:
+  before-all:
+    - builder: custom
+      commands:
+        - npm install
+        - npm run clean-copy

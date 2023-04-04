@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.scp/
+.env
+Makefile*.mta
+mta_archives
+mta-*
+resources
+archive.zip
+.*_mta_build_tmp
+.DS_Store
+default-env.json
+gen
+!db/src/gen
+--*.js

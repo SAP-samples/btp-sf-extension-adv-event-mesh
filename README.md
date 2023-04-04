@@ -1,41 +1,63 @@
-# SAP-samples/repository-template
-This default template for SAP Samples repositories includes files for README, LICENSE, and .reuse/dep5. All repositories on github.com/SAP-samples will be created based on this template.
-
-# Containing Files
-
-1. The LICENSE file:
-In most cases, the license for SAP sample projects is `Apache 2.0`.
-
-2. The .reuse/dep5 file: 
-The [Reuse Tool](https://reuse.software/) must be used for your samples project. You can find the .reuse/dep5 in the project initial. Please replace the parts inside the single angle quotation marks < > by the specific information for your repository.
-
-3. The README.md file (this file):
-Please edit this file as it is the primary description file for your project. You can find some placeholder titles for sections below.
-
-# [Title]
-<!-- Please include descriptive title -->
-
-<!--- Register repository https://api.reuse.software/register, then add REUSE badge:
-[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/REPO-NAME)](https://api.reuse.software/info/github.com/SAP-samples/REPO-NAME)
--->
+# Create Facility Manager Application Consuming Business Events from SAP SuccessFactors and SAP Advanced Event Mesh
 
 ## Description
-<!-- Please include SEO-friendly description -->
 
-## Requirements
+Extend SAP SuccessFactors on the SAP Business Technology Platform (SAP BTP) using state-of-the-art methodologies and technologies. Put an event-driven architecture into action, use the [**SAP Integration Suite, Advanced Event Mesh**](https://help.sap.com/docs/SAP_ADVANCED_EVENT_MESH) for consuming on SAP SuccessFactors data events.
 
-## Download and Installation
+The main intent of this scenario is to complement an existing business process in an SAP solution, which means, enhancing SAP SuccessFactors with additional business process steps. This involves adding major logic and/or additional data and goes beyond simple UI changes.
+
+## Business Scenario
+
+John, Facility manager of ACME corporation would like to get notification when employee location is transferred by the company to his region (e.g Bribane, AUS). John would then proceed with the employee on-boarding process by allocating workstation and other relevant accessories (Lockers, Desk keys …).
+
+**Current Position - What is the challenge?**
+
+- Employee data available only in SAP SuccessFactors system.
+- Facility manager need access to SAP SuccessFactors for their work.
+- No custom UI for specific workstation allocation use case.
+
+**Destination - What is the outcome?**
+
+- Changes in SAP SuccessFactors communicated via events in real time to extension application
+- Custom extension application works independently from SuccessFactors
+- Facility Manager only need access to custom app
+
+## Solution Architecture
+
+The extension application is developed using the Express NodeJS and runs on the SAP BTP. It consumes platform services like SAP Integration Suite, Advanced Event Mesh and SAP HANA services. The events generated in SAP SuccessFactors are inserted into an SAP Advanced Event Mesh queue created by NodeJs app (Facility Manager). The application consumes these events and inserts relevant employee details into the local database.
+
+![solution](./documentation/images/SolutionDiagram.png)
+
+## Focus Topics
+
+The tutorial focuses on the following aspects:
+
+- Building a side-by-side extension to [SAP SuccessFactors](https://help.sap.com/docs/SAP_SUCCESSFACTORS_HXM_SUITE)
+- Setting up eventing and consuming events from SAP SuccessFactors using [SAP Advanced Event Mesh](https://help.sap.com/docs/SAP_ADVANCED_EVENT_MESH)
+- Developing an application on [SAP BTP](https://help.sap.com/viewer/product/BTP/Cloud/en-US?task=discover_task) 
+- Implementing an [SAP Fiori UI](https://help.sap.com/docs/SAPUI5)
+
+## Where to Start ?
+
+#### Step 1: [Prerequisites](./documentation/Prerequisites/README.md)
+
+#### Step 2: [Set Up Advanced Event Mesh](./documentation/setup-advanced-event-mesh/README.md)
+
+#### Step 3: [Set Up Events in SAP SuccessFactors](./documentation/setup-events-successfactors/README.md)
+
+#### Step 4: [Set Up Facility Manager Application](./documentation/setup-facility-manager-app/README.md)
+
+#### Step 5: [Execute Example Scenario](./documentation/execute-example-scenario/README.md)
 
 ## Known Issues
-<!-- You may simply state "No known issues. -->
 
-## How to obtain support
-[Create an issue](https://github.com/SAP-samples/<repository-name>/issues) in this repository if you find a bug or have questions about the content.
- 
-For additional support, [ask a question in SAP Community](https://answers.sap.com/questions/ask.html).
+The tutorial is provided on the "as-is" basis. Currently, there are no known issues for the tutorial project.
 
-## Contributing
-If you wish to contribute code, offer fixes or improvements, please send a pull request. Due to legal reasons, contributors will be asked to accept a DCO when they create the first pull request to this project. This happens in an automated fashion during the submission process. SAP uses [the standard DCO text of the Linux Foundation](https://developercertificate.org/).
+## How to Obtain Support
+
+Create an issue to get support or to report a bug in [GitHub](https://github.com/SAP-samples/issues).
 
 ## License
-Copyright (c) 2023 SAP SE or an SAP affiliate company. All rights reserved. This project is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](LICENSE) file.
+
+Copyright (c) 2022 SAP SE or an SAP affiliate company. All rights reserved. This project is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](LICENSES/Apache-2.0.txt) file.
+
