@@ -51,13 +51,15 @@ The tutorial focuses on the following aspects:
 
 ## Known Issues
 
-The tutorial is provided on the "as-is" basis. Currently, there are no known issues for the tutorial project.
+The tutorial is provided on the "as-is" basis.
+
+- SAP Successfactors integration has restriction to use port number other than `443`. This requires configuration in the SAP Advanced Event Mesh administrator console to switch the `REST` port to `443`
 
 ## How to Obtain Support
 
-Create an issue to get support or to report a bug in [GitHub](https://github.com/SAP-samples/issues).
+Create an issue to get support or to report a bug in [GitHub](https://github.com/SAP-samples/btp-sf-extension-adv-event-mesh/issues).
 
 ## License
 
-Copyright (c) 2022 SAP SE or an SAP affiliate company. All rights reserved. This project is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](LICENSES/Apache-2.0.txt) file.
+Copyright (c) 2023 SAP SE or an SAP affiliate company. All rights reserved. This project is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](LICENSES/Apache-2.0.txt) file.
 
