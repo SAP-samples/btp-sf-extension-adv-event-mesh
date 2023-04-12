@@ -46,7 +46,9 @@
 
     ![AEM Service](./images/setup1.png)
 
-4. Choose **Create**.
+4. Click **Next** and enter the email address of admin.
+
+5. Choose **Create**.
 
 ## Configure the Messaging Broker in the SAP Integration Suite, Advanced Event Mesh Console
 
@@ -85,3 +87,7 @@
     ![AEM service4](./images/setup6.png)
 
     > These details are to be filled in the **Set Up Events in SAP SuccessFactors** [chapter](../setup-events-successfactors/README.md).
+
+
+
+> **Note:** SAP Successfactors integration has restriction to use port number other than **443**. This requires configuration in the SAP Integration Suite, advanced event mesh administrator console to switch the **REST** port to **443**
