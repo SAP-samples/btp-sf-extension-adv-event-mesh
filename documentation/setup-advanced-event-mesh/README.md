@@ -1,12 +1,12 @@
-# Setup BTP and Advanced Event Mesh
+# Set Up SAP BTP and SAP Integration Suite, Advanced Event Mesh
 
 ## Configure Entitlements for SAP BTP, Cloud Foundry Runtime
 
-> In case that you do not have a subaccount for SAP BTP in place, see sections [Create a Subaccount](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/05280a123d3044ae97457a25b3013918.html?q=subaccount) and [Create Spaces](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/2f6ed22ccf424dae84345f4500c2d8ea.html) in the SAP BTP documentation for more details.
+> In case you do not have a subaccount in SAP BTP in place, see sections [Create a Subaccount](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/05280a123d3044ae97457a25b3013918.html?q=subaccount) and [Create Spaces](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/2f6ed22ccf424dae84345f4500c2d8ea.html) in the SAP BTP documentation for more details.
 
-1. Make sure you are logged on to SAP BTP cockpit as a Cloud Foundry administrator.
+1. Make sure you are logged in to the SAP BTP cockpit as a Cloud Foundry administrator.
 
-2. Choose **Entitlements > Entity Assignments**.
+2. Choose **Entitlements** &rarr; **Entity Assignments**.
 
 3. If there is no entry for the Cloud Foundry runtime, choose **Configure Entitlements**, and then **Add Service Plans**.
 
@@ -14,75 +14,74 @@
 
 - Choose **Cloud Foundry Runtime**.
 
-- Under Available Service Plans, select the **MEMORY** checkbox.
+- In the **Available Plans** section, select the **MEMORY** checkbox.
 
  ![AR](./images/setup13.png)
 
 - Choose **Add 1 Service Plan**.
 
-## Configure Entitlement for SAP Advanced Event Mesh
+## Configure the Entitlement for SAP Integration Suite, Advanced Event Mesh
 
 1. Choose **Configure Entitlements** &rarr; **Add Service Plan**.
 
-2. In the **Subaccount Entitlements** dialog box, select the service **SAP Integration Suite, advanced event mesh**.
+2. In the **Subaccount Entitlements** dialog box, select the **SAP Integration Suite, advanced event mesh** service.
 
  ![AEM Service](./images/setup12.png)
 
-3. In the **Service Details: Advanced Event Mesh** screen area, select the service plan **default**.
+3. In the **Service Details: Advanced Event Mesh** screen area, select the **default** service plan.
 
-4. Choose **Add 1 Service Plan** to add this entitlement for the SAP Advanced Event Mesh service for your subaccount.
+4. Choose **Add 1 Service Plan** to add the SAP Integration Suite, advanced event mesh entitlement for your subaccount.
 
 5. Choose **Save**.
 
-## Subscribe to Advanced Event Mesh console
+## Subscribe to the SAP Integration Suite, Advanced Event Mesh Console
 
-1. From the BTP subaccount, choose **Instances and Subscriptions**.
+1. In the SAP BTP cockpit, navigate to your subaccount, and choose **Instances and Subscriptions**.
 
-2. Click on **Create** button.
+2. Choose **Create**.
 
-3. In the **New Instance or Subscription** popup choose the following
-    - service: **SAP Integration suite, Advanced event mesh**
-    - plan: **default**
+3. In the **New Instance or Subscription** popup, select the following:
+    - Service: **SAP Integration suite, Advanced event mesh**
+    - Plan: **default**
 
     ![AEM Service](./images/setup1.png)
 
 4. Choose **Create**.
 
-## Configure Messaging Broker in Advanced Event Mesh Console
+## Configure the Messaging Broker in the SAP Integration Suite, Advanced Event Mesh Console
 
-1. From the BTP subaccount, choose **Instances and Subscriptions**.
+1. In the SAP BTP cockpit, navigate to your subaccount, and choose **Instances and Subscriptions**.
 
-2. Select the tab **Subscriptions**, look for **SAP Integration suite, Advanced event mesh**, Select the three dots ... to open the relevant **Actions**. Select **Go to Application** to open the SAP Integration suite, Advanced event mesh service.
+2. Select the **Subscriptions** tab, and look for **SAP Integration suite, Advanced event mesh**. Choose the three dots ... to open the relevant **Actions**. Choose **Go to Application** to open the SAP Integration Suite, advanced event mesh console.
 
-3. Enter your custom Identity Provider credentials to login to the SAP Integration suite, Advanced event mesh Application which opens in a separate browser tab.
+3. Enter your custom Identity Provider credentials to log in to the SAP Integration Suite, advanced event mesh console which opens in a separate browser tab.
 
-4. Choose **Cluster Manager** from left pane and click on **Create Service** button.
+4. Choose **Cluster Manager** from left pane and then choose **Create Service**.
 
-5. Enter the following details
+5. Enter the following details:
 
     - Service Name: **Facility Manager Messaging**
     - Service Type: **Enterprise**
     - Cloud: Any Cloud Provider
-    - Region: Choose suitable cloud region. for example, **EKS - Asia Pacific (Sydney)**
+    - Region: Choose suitable cloud region. For example, **EKS - Asia Pacific (Sydney)**.
     - Broker Version: Default
 
 6. Choose **Create Service**.
 
-7. Choose **Connect** and copy the connection details from **AMQP** API.
+7. Go to the **Connect** tab and copy the connection details from the **AMQP** API.
 
     ![AEM Service2](./images/setup4.png)
 
-   > These details are to be filled in the **Setup Facility Manager application**.
+   > These details are to be filled in the **Set Up Facility Manager application**.
 
-8. Similarly, also copy **SEMP REST API credentials** from **Manage**.
+8. Go to the **Manage** tab and copy the credentials from the **SEMP REST API**.
 
      ![AEM Service3](./images/setup5.png)
 
+    > These details are to be filled in the **Set Up Facility Manager application**.
 
-    > These details are to be filled in the **Setup Facility Manager application**.
-
-9. Similarly, also copy **REST API** credentials from **Connect**
+9. Go back to the **Connect** tab and copy the credentals from the **REST API**.
 
     ![AEM service4](./images/setup6.png)
 
-    > These details are to be filled in the **Setup Events in Successfactors** [chapter](../setup-events-successfactors/README.md).
+    > These details are to be filled in the **Set Up Events in SAP SuccessFactors** [chapter](../setup-events-successfactors/README.md).

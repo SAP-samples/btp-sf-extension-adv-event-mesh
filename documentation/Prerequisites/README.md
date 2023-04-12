@@ -10,13 +10,13 @@ This section contains the prerequisites that you would have to get started. Itâ€
 ## For Local Development
 
 * [Node.js](https://nodejs.org/en/download/) - find the latest Node.js version.
-* [Cloud Foundry Command Line Interface (CLI)](https://github.com/cloudfoundry/cli#downloads)
+* [Cloud Foundry Command Line Interface (cf CLI)](https://github.com/cloudfoundry/cli#downloads)
 * [Visual Studio Code](https://code.visualstudio.com/download) or another suitable IDE or editor of your choice
 
 ## On SAP BTP Side
 
-* [Subaccount](https://help.sap.com/products/BTP/65de2977205c403bbc107264b8eccf4b/8ed4a705efa0431b910056c0acdbf377.html?locale=en-US#loio8d6e3a0fa4ab43e4a421d3ed08128afa) in SAP BTP
-* Cloud Foundry Space in SAP BTP
+* [Subaccount](https://help.sap.com/docs/btp/sap-business-technology-platform/account-model) in SAP BTP
+* [Cloud Foundry Space](https://help.sap.com/docs/btp/sap-business-technology-platform/create-spaces) in SAP BTP
 
 
 ### Services in SAP BTP and Entitlements
@@ -46,5 +46,5 @@ Make sure that you have an instance of SAP HANA database in your space. For more
 
 ## On SAP SuccessFactors Side
 
-- You have a dedicated SAP SuccessFactors company instance.
-- To configure the integration on the SAP SuccessFactors system side, you need a user with administrator permissions.
+- You have a dedicated SAP SuccessFactors company instance
+- To configure the integration on the SAP SuccessFactors system side, you need a user with administrator permissions
