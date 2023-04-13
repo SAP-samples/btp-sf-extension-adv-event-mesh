@@ -1,3 +1,5 @@
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/btp-sf-extension-adv-event-mesh)](https://api.reuse.software/info/github.com/SAP-samples/btp-sf-extension-adv-event-mesh)
+
 # SAP SuccessFactors Extension with SAP Integration Suite, Advanced Event Mesh
 
 ## Description
