@@ -4,7 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "jest",
+    "test": "npm run test:unit && npm run test:integration",
+    "test:unit": "jest test/unit/",
+    "test:integration": "jest test/integration/AEMValidation.test.js",
     "start": "node srv/server.js",
     "watch": "nodemon srv/server.js",
     "clean": "rimraf gen && mkdir gen",
@@ -31,6 +33,10 @@
     "mocha": "^10.2.0",
     "nodemon": "^2.0.20",
     "rimraf": "4.1.2",
-    "cpy-cli": "4.2.0"
+    "cpy-cli": "4.2.0",
+    "chai": "^4.3.7",
+    "chai-http": "^4.3.0",
+    "sqlite3": "^5.1.6",
+    "supertest": "^6.3.3"
   }
 }
