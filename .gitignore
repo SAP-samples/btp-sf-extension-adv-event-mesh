@@ -13,3 +13,4 @@ default-env.json
 gen
 !db/src/gen
 --*.js
+eventMesh.db
