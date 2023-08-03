@@ -35,11 +35,12 @@ git clone https://github.tools.sap/refapps/btp-extension-sf-advanced-event-mesh.
 ```
 
 - Fill the `username`, `password` and `url` from the AMQP connection details that we copied in [Step 7](../setup-advanced-event-mesh/README.md#configure-messaging-broker-in-advanced-event-mesh-console).
+    >Note: Fill without `amqps://` prefix for the `url`.
 
 - Fill the management `uri`, `msgVpnName`, `username` and `password` from the SEMP REST API credentials that we copied in [Step 8](../setup-advanced-event-mesh/README.md#configure-messaging-broker-in-advanced-event-mesh-console).
 
 4. Open the `srv/config.js` file and configure the relevant topics.
-- Enter the location code to subscribe to the events published from the SAP SuccessFactors for the particular location. For example, to listen to events pusblish from `Brisbane, AUS` set the topic as `emp/transfer/8510-0002`
+- Enter the location code to subscribe to the events published from the SAP SuccessFactors for the particular location. For example, to listen to events publish from `Brisbane, AUS` set the topic as `emp/transfer/8510-0002`
 
 ## Build the Application
 

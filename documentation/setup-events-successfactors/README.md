@@ -32,22 +32,22 @@
 
 8. Choose **+ button** to configure the fields and then choose **Insert sibling element**.
 
-9. Enter the following elements as shown in the screenshot:
+9. Choose one by one each of the elements created and in the detailed view of each element, choose the button with tooltip **Set as Association Field**, and map the respective fields:
+
+    - name: defaultFullName in User (Entity Tree View-> userNav->defaultFullName)
+    - userId: User ID (userId) in Job Information (EmpJob)
+    - email: Email (email) in User
+    - country: Country (countryOfCompany) in Job Information (EmpJob)
+    - locationCode: Location (location) in Job Information (EmpJob)
+    - locationDesc: Name (name) in Location (FOLocation)
+    - department: Description (description) in Department (FODepartment)
+    - jobTitle: Job Title (jobTitle) in Job Information (EmpJob)
+    - businessUnit: Description (description) in Business Unit (FOBusinessUnit)
+    - reason: set default value **LOC_CHG**
+
+10. Enter the following elements as shown in the screenshot:
 
     ![setup3](./images/setup3.png)
-
-10. Choose one by one each of the elements created and in the detailed view of each element, choose the button with tooltip **Set as Association Field**, and map the respective fields:
-
-    - name: defaultFullName from User
-    - userId: User ID (userId) from Job Information (EmpJob)
-    - email: Email (email) from User
-    - country: Country (countryOfCompany) from Job Information
-    - locationCode: Location (location) from Job Information
-    - locationDesc: Name (name) from Location (FOLocation)
-    - department: Description (description) from Department (departmentNav/description)
-    - jobTitle: Job Title (jobTitle) from Job Information (EmpJob)
-    - businessUnit: Description (description) from Business Unit (businessUnitNav/description)
-    - reason: set default value **LOC_CHG**
 
 11. Choose **Next** and go to **Destination Settings**.
 
