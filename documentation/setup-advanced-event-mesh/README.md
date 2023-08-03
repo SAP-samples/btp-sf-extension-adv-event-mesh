@@ -90,4 +90,4 @@
 
 
 
-> **Note:** SAP Successfactors integration has restriction to use port number other than **443**. This requires configuration in the SAP Integration Suite, advanced event mesh administrator console to switch the **REST** port to **443**
+> **Note:** SAP Successfactors integration has restriction to use port number other than **443**. This requires configuration in the SAP Integration Suite, advanced event mesh administrator console to switch the **REST** port to **443**. Please refer [Port configuration in Advanced Event Mesh](../port-configuration-aem/README.md) chapter.
