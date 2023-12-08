@@ -20,7 +20,7 @@
     "@sap/hdbext": "^7.7.2",
     "@sap/xb-msg-amqp-v100": "^0.9.58",
     "@sap/xsenv": "^3.4.0",
-    "@sap/xssec": "^3.2.17",
+    "@sap/xssec": "^3.6.0",
     "axios": "^1.3.2",
     "cf-nodejs-logging-support": "^6.14.1",
     "express": "^4.18.2",
