@@ -66,6 +66,9 @@
 
     ![setup5](./images/setup5.png)
 
+    >In case, the `Location` option not available in dropdown, click on `Associate Field` and search for **Location (location) in Job Information (EmpJob)**. Click on `Change Asscoiation to "Location"` button.
+    ![setup7](./images/setup7.png)
+
 15. Choose **OK** and then choose **Next**.
 
 16. Save the integration.
