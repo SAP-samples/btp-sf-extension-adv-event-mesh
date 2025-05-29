@@ -44,10 +44,13 @@ git clone https://github.tools.sap/refapps/btp-extension-sf-advanced-event-mesh.
 
 ## Build the Application
 
-> Note: Follow steps 1-4 in the [Deploy Your Multi-Target Application (MTA)](https://developers.sap.com/tutorials/btp-app-cap-mta-deployment.html) tutorial.
+1. Run the following command in the root directory:
 
+```
+npm i
+```
 
-1. From the project root directory, build the MTA module:
+2. From the project root directory, build the MTA module:
 
 ```
 mbt build
